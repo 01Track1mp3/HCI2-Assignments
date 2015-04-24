@@ -18,6 +18,7 @@
 		26A739E41AEABDB700750AD8 /* DepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739DE1AEABDB700750AD8 /* DepthCamera.cpp */; };
 		26A739E51AEABDB700750AD8 /* DepthCameraException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E01AEABDB700750AD8 /* DepthCameraException.cpp */; };
 		26A739E61AEABDB700750AD8 /* KinectMotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E21AEABDB700750AD8 /* KinectMotor.cpp */; };
+		26A739E81AEAC11600750AD8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E71AEAC11600750AD8 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		26A739E11AEABDB700750AD8 /* DepthCameraException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCameraException.h; sourceTree = "<group>"; };
 		26A739E21AEABDB700750AD8 /* KinectMotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectMotor.cpp; sourceTree = "<group>"; };
 		26A739E31AEABDB700750AD8 /* KinectMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectMotor.h; sourceTree = "<group>"; };
+		26A739E71AEAC11600750AD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		26A7398D1AEAA4C900750AD8 = {
 			isa = PBXGroup;
 			children = (
+				26A739E71AEAC11600750AD8 /* README.md */,
 				26A739981AEAA4C900750AD8 /* Demo */,
 				26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */,
 				26A739971AEAA4C900750AD8 /* Products */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A739E81AEAC11600750AD8 /* README.md in Sources */,
 				26A739A61AEAA56A00750AD8 /* main.cpp in Sources */,
 				26A739E41AEABDB700750AD8 /* DepthCamera.cpp in Sources */,
 				26A739E51AEABDB700750AD8 /* DepthCameraException.cpp in Sources */,
