@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A739A51AEAA56A00750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A01AEAA56A00750AD8 /* Application.cpp */; };
+		26A739A61AEAA56A00750AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A31AEAA56A00750AD8 /* main.cpp */; };
+		26A739D31AEABD2600750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739C21AEABD2600750AD8 /* Application.cpp */; };
+		26A739D51AEABD2600750AD8 /* DepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739C61AEABD2600750AD8 /* DepthCamera.cpp */; };
+		26A739D71AEABD2600750AD8 /* DepthCameraException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739C91AEABD2600750AD8 /* DepthCameraException.cpp */; };
+		26A739D91AEABD2600750AD8 /* KinectMotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739CC1AEABD2600750AD8 /* KinectMotor.cpp */; };
+		26A739DB1AEABD2600750AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739D01AEABD2600750AD8 /* main.cpp */; };
+		26A739DD1AEABD2600750AD8 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 26A739D21AEABD2600750AD8 /* Makefile */; };
+		26A739E41AEABDB700750AD8 /* DepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739DE1AEABDB700750AD8 /* DepthCamera.cpp */; };
+		26A739E51AEABDB700750AD8 /* DepthCameraException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E01AEABDB700750AD8 /* DepthCameraException.cpp */; };
+		26A739E61AEABDB700750AD8 /* KinectMotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E21AEABDB700750AD8 /* KinectMotor.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26A739941AEAA4C900750AD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		26A739B91AEABC8F00750AD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		26A739961AEAA4C900750AD8 /* HCI2Assignments */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HCI2Assignments; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A739A01AEAA56A00750AD8 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		26A739A11AEAA56A00750AD8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		26A739A31AEAA56A00750AD8 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		26A739A41AEAA56A00750AD8 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Assignment1-KinectTouchpad"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A739C21AEABD2600750AD8 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		26A739C31AEABD2600750AD8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		26A739C61AEABD2600750AD8 /* DepthCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCamera.cpp; sourceTree = "<group>"; };
+		26A739C71AEABD2600750AD8 /* DepthCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCamera.h; sourceTree = "<group>"; };
+		26A739C91AEABD2600750AD8 /* DepthCameraException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCameraException.cpp; sourceTree = "<group>"; };
+		26A739CA1AEABD2600750AD8 /* DepthCameraException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCameraException.h; sourceTree = "<group>"; };
+		26A739CC1AEABD2600750AD8 /* KinectMotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectMotor.cpp; sourceTree = "<group>"; };
+		26A739CD1AEABD2600750AD8 /* KinectMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectMotor.h; sourceTree = "<group>"; };
+		26A739CF1AEABD2600750AD8 /* main */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = main; sourceTree = "<group>"; };
+		26A739D01AEABD2600750AD8 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		26A739D21AEABD2600750AD8 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		26A739DE1AEABDB700750AD8 /* DepthCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCamera.cpp; sourceTree = "<group>"; };
+		26A739DF1AEABDB700750AD8 /* DepthCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCamera.h; sourceTree = "<group>"; };
+		26A739E01AEABDB700750AD8 /* DepthCameraException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCameraException.cpp; sourceTree = "<group>"; };
+		26A739E11AEABDB700750AD8 /* DepthCameraException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCameraException.h; sourceTree = "<group>"; };
+		26A739E21AEABDB700750AD8 /* KinectMotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectMotor.cpp; sourceTree = "<group>"; };
+		26A739E31AEABDB700750AD8 /* KinectMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectMotor.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26A739931AEAA4C900750AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A739B81AEABC8F00750AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A7398D1AEAA4C900750AD8 = {
+			isa = PBXGroup;
+			children = (
+				26A739981AEAA4C900750AD8 /* Demo */,
+				26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */,
+				26A739971AEAA4C900750AD8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26A739971AEAA4C900750AD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26A739961AEAA4C900750AD8 /* HCI2Assignments */,
+				26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26A739981AEAA4C900750AD8 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				26A739B51AEAB85C00750AD8 /* framework */,
+				26A739A01AEAA56A00750AD8 /* Application.cpp */,
+				26A739A11AEAA56A00750AD8 /* Application.h */,
+				26A739A31AEAA56A00750AD8 /* main.cpp */,
+				26A739A41AEAA56A00750AD8 /* Makefile */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		26A739B51AEAB85C00750AD8 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				26A739DE1AEABDB700750AD8 /* DepthCamera.cpp */,
+				26A739DF1AEABDB700750AD8 /* DepthCamera.h */,
+				26A739E01AEABDB700750AD8 /* DepthCameraException.cpp */,
+				26A739E11AEABDB700750AD8 /* DepthCameraException.h */,
+				26A739E21AEABDB700750AD8 /* KinectMotor.cpp */,
+				26A739E31AEABDB700750AD8 /* KinectMotor.h */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */ = {
+			isa = PBXGroup;
+			children = (
+				26A739C21AEABD2600750AD8 /* Application.cpp */,
+				26A739C31AEABD2600750AD8 /* Application.h */,
+				26A739C51AEABD2600750AD8 /* framework */,
+				26A739CF1AEABD2600750AD8 /* main */,
+				26A739D01AEABD2600750AD8 /* main.cpp */,
+				26A739D21AEABD2600750AD8 /* Makefile */,
+			);
+			path = "Assignment1-KinectTouchpad";
+			sourceTree = "<group>";
+		};
+		26A739C51AEABD2600750AD8 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				26A739C61AEABD2600750AD8 /* DepthCamera.cpp */,
+				26A739C71AEABD2600750AD8 /* DepthCamera.h */,
+				26A739C91AEABD2600750AD8 /* DepthCameraException.cpp */,
+				26A739CA1AEABD2600750AD8 /* DepthCameraException.h */,
+				26A739CC1AEABD2600750AD8 /* KinectMotor.cpp */,
+				26A739CD1AEABD2600750AD8 /* KinectMotor.h */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26A739951AEAA4C900750AD8 /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A7399D1AEAA4C900750AD8 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				26A739921AEAA4C900750AD8 /* Sources */,
+				26A739931AEAA4C900750AD8 /* Frameworks */,
+				26A739941AEAA4C900750AD8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = HCI2Assignments;
+			productReference = 26A739961AEAA4C900750AD8 /* HCI2Assignments */;
+			productType = "com.apple.product-type.tool";
+		};
+		26A739BA1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A739BF1AEABC9000750AD8 /* Build configuration list for PBXNativeTarget "Assignment1-KinectTouchpad" */;
+			buildPhases = (
+				26A739B71AEABC8F00750AD8 /* Sources */,
+				26A739B81AEABC8F00750AD8 /* Frameworks */,
+				26A739B91AEABC8F00750AD8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Assignment1-KinectTouchpad";
+			productName = "Assignment1-KinectTouchpad";
+			productReference = 26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26A7398E1AEAA4C900750AD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Sven Mischkewitz";
+				TargetAttributes = {
+					26A739951AEAA4C900750AD8 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					26A739BA1AEABC8F00750AD8 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 26A739911AEAA4C900750AD8 /* Build configuration list for PBXProject "HCI2Assignments" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 26A7398D1AEAA4C900750AD8;
+			productRefGroup = 26A739971AEAA4C900750AD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26A739951AEAA4C900750AD8 /* Demo */,
+				26A739BA1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26A739921AEAA4C900750AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A739A61AEAA56A00750AD8 /* main.cpp in Sources */,
+				26A739E41AEABDB700750AD8 /* DepthCamera.cpp in Sources */,
+				26A739E51AEABDB700750AD8 /* DepthCameraException.cpp in Sources */,
+				26A739A51AEAA56A00750AD8 /* Application.cpp in Sources */,
+				26A739E61AEABDB700750AD8 /* KinectMotor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A739B71AEABC8F00750AD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A739DD1AEABD2600750AD8 /* Makefile in Sources */,
+				26A739D51AEABD2600750AD8 /* DepthCamera.cpp in Sources */,
+				26A739D31AEABD2600750AD8 /* Application.cpp in Sources */,
+				26A739D71AEABD2600750AD8 /* DepthCameraException.cpp in Sources */,
+				26A739DB1AEABD2600750AD8 /* main.cpp in Sources */,
+				26A739D91AEABD2600750AD8 /* KinectMotor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		26A7399B1AEAA4C900750AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/openni/1.5.7.10/include/ni,
+					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
+					/usr/local/Cellar/opencv/2.4.10.1/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_calib3d.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_contrib.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_core.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_features2d.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_flann.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_gpu.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_highgui.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_imgproc.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_legacy.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ml.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_nonfree.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_objdetect.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ocl.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_photo.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_stitching.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_superres.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ts.a,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_video.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_videostab.dylib,
+					"-L/usr/local/Cellar/openni/1.5.7.10/lib",
+					"-lOpenNI",
+					"-lOpenNI.jni",
+					"-lnimCodecs",
+					"-lnimMockNodes",
+					"-lnimRecorder",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26A7399C1AEAA4C900750AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/openni/1.5.7.10/include/ni,
+					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
+					/usr/local/Cellar/opencv/2.4.10.1/include,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_calib3d.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_contrib.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_core.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_features2d.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_flann.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_gpu.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_highgui.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_imgproc.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_legacy.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ml.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_nonfree.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_objdetect.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ocl.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_photo.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_stitching.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_superres.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ts.a,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_video.dylib,
+					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_videostab.dylib,
+					"-L/usr/local/Cellar/openni/1.5.7.10/lib",
+					"-lOpenNI",
+					"-lOpenNI.jni",
+					"-lnimCodecs",
+					"-lnimMockNodes",
+					"-lnimRecorder",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		26A7399E1AEAA4C900750AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wall",
+					"-Wextra",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_LDFLAGS = "";
+			};
+			name = Debug;
+		};
+		26A7399F1AEAA4C900750AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wall",
+					"-Wextra",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_LDFLAGS = "";
+			};
+			name = Release;
+		};
+		26A739C01AEABC9000750AD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		26A739C11AEABC9000750AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26A739911AEAA4C900750AD8 /* Build configuration list for PBXProject "HCI2Assignments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A7399B1AEAA4C900750AD8 /* Debug */,
+				26A7399C1AEAA4C900750AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A7399D1AEAA4C900750AD8 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A7399E1AEAA4C900750AD8 /* Debug */,
+				26A7399F1AEAA4C900750AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26A739BF1AEABC9000750AD8 /* Build configuration list for PBXNativeTarget "Assignment1-KinectTouchpad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A739C01AEABC9000750AD8 /* Debug */,
+				26A739C11AEABC9000750AD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26A7398E1AEAA4C900750AD8 /* Project object */;
+}
