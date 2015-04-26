@@ -43,7 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		26A739961AEAA4C900750AD8 /* HCI2Assignments */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HCI2Assignments; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A739961AEAA4C900750AD8 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A739A01AEAA56A00750AD8 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		26A739A11AEAA56A00750AD8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
 		26A739A31AEAA56A00750AD8 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		26A739971AEAA4C900750AD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26A739961AEAA4C900750AD8 /* HCI2Assignments */,
+				26A739961AEAA4C900750AD8 /* Demo */,
 				26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
 			);
 			name = Products;
@@ -174,7 +174,7 @@
 			);
 			name = Demo;
 			productName = HCI2Assignments;
-			productReference = 26A739961AEAA4C900750AD8 /* HCI2Assignments */;
+			productReference = 26A739961AEAA4C900750AD8 /* Demo */;
 			productType = "com.apple.product-type.tool";
 		};
 		26A739BA1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */ = {
@@ -305,31 +305,33 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_calib3d.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_contrib.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_core.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_features2d.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_flann.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_gpu.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_highgui.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_imgproc.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_legacy.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ml.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_nonfree.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_objdetect.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ocl.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_photo.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_stitching.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_superres.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ts.a,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_video.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_videostab.dylib,
 					"-L/usr/local/Cellar/openni/1.5.7.10/lib",
 					"-lOpenNI",
 					"-lOpenNI.jni",
 					"-lnimCodecs",
 					"-lnimMockNodes",
 					"-lnimRecorder",
+					"-L/usr/local/Cellar/opencv/2.4.10.1/lib",
+					"-L/usr/local/Cellar/opencv/2.4.11/lib",
+					"-lopencv_calib3d",
+					"-lopencv_contrib",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_gpu",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_legacy",
+					"-lopencv_ml",
+					"-lopencv_nonfree",
+					"-lopencv_objdetect",
+					"-lopencv_ocl",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
 				);
 				SDKROOT = macosx;
 			};
@@ -374,31 +376,33 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_calib3d.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_contrib.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_core.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_features2d.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_flann.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_gpu.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_highgui.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_imgproc.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_legacy.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ml.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_nonfree.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_objdetect.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ocl.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_photo.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_stitching.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_superres.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_ts.a,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_video.dylib,
-					/usr/local/Cellar/opencv/2.4.10.1/lib/libopencv_videostab.dylib,
 					"-L/usr/local/Cellar/openni/1.5.7.10/lib",
 					"-lOpenNI",
 					"-lOpenNI.jni",
 					"-lnimCodecs",
 					"-lnimMockNodes",
 					"-lnimRecorder",
+					"-L/usr/local/Cellar/opencv/2.4.10.1/lib",
+					"-L/usr/local/Cellar/opencv/2.4.11/lib",
+					"-lopencv_calib3d",
+					"-lopencv_contrib",
+					"-lopencv_core",
+					"-lopencv_features2d",
+					"-lopencv_flann",
+					"-lopencv_gpu",
+					"-lopencv_highgui",
+					"-lopencv_imgproc",
+					"-lopencv_legacy",
+					"-lopencv_ml",
+					"-lopencv_nonfree",
+					"-lopencv_objdetect",
+					"-lopencv_ocl",
+					"-lopencv_photo",
+					"-lopencv_stitching",
+					"-lopencv_superres",
+					"-lopencv_ts",
+					"-lopencv_video",
+					"-lopencv_videostab",
 				);
 				SDKROOT = macosx;
 			};
@@ -471,6 +475,7 @@
 				26A7399F1AEAA4C900750AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A739BF1AEABC9000750AD8 /* Build configuration list for PBXNativeTarget "Assignment1-KinectTouchpad" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +484,7 @@
 				26A739C11AEABC9000750AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D77AC5C0-97FF-445F-B8F1-C657848DE7CE</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>HCI2Assignments</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8F57F9CBF086304384462A93B7720D409C42C625</key>
 		<string>https://github.com/01Track1mp3/HCI2-Assignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HCI2Assignments.xcodeproj/project.xcworkspace</string>
+	<string>HCI2Assignments.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8F57F9CBF086304384462A93B7720D409C42C625</key>
