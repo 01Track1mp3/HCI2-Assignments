@@ -18,25 +18,48 @@
 #include "framework/DepthCamera.h"
 #include "framework/KinectMotor.h"
 
-int first_thresh = 4;
-int second_thresh = 1;
+int first_thresh = 3;
+int second_thresh = 2;
 int blur_size = 13;
-int min_foot_area = 1000;
+int min_foot_area = 1400;
 
 bool captured_reference = false;
 int brighten_factor = 15;
 
-cv::Scalar ellipse_color = cv::Scalar(100,100,100);
+static cv::Scalar ellipse_color = cv::Scalar(255,0,0);
+static cv::Scalar line_color = cv::Scalar(0,255,0);
+
+void Application::drawContacts()
+{
+    cv::Point from;
+    cv::Point to;
+    
+    for (int i = 0; i < contacts.size() - 1; i++) {
+        from = contacts[i].center;
+        to = contacts[i + 1].center;
+        cv::line(m_bgrImage, from, to, line_color);
+    }
+}
+
+void Application::addToContacts(cv::RotatedRect box)
+{
+    contacts.push_back(box);
+}
 
 bool Application::isFoot(std::vector<cv::Point> contour)
 {
-    if (cv::contourArea(cv::Mat(contour)) > min_foot_area) {
-        //        std::cout << cv::contourArea(cv::Mat(contour)) << std::endl;
+    if (cv::contourArea(contour) > min_foot_area) {
+//        std::cout << cv::contourArea(cv::Mat(contour)) << std::endl;
         return true;
     } else {
         return false;
     }
     //    return cv::contourArea(cv::Mat(contour)) > min_foot_area;
+}
+
+void Application::drawEllipse(cv::RotatedRect box)
+{
+    cv::ellipse(m_bgrImage, box, ellipse_color, 3);
 }
 
 
@@ -77,19 +100,29 @@ void Application::processFrame()
     // make binary image
     cv::threshold(m_outputImage, m_outputImage, second_thresh, 255, cv::THRESH_BINARY);
     
+    cv::Mat m_contour = cv::Mat(480, 640, CV_8UC1);
+    m_outputImage.copyTo(m_contour);
+    
     // find contures
     std::vector<std::vector<cv::Point> > contours;
-    cv::findContours(m_outputImage, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
+    cv::findContours(m_contour, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
     
     // filter contures
     contours.erase(std::remove_if(std::begin(contours), std::end(contours), isFoot), std::end(contours));
     
     // draw ellipses
     for (unsigned long i = 0; i < contours.size(); i++) {
+        // less than 5 points throw an assertion error
         if (contours[i].size() >= 5) {
             cv::RotatedRect box = cv::fitEllipse(contours[i]);
-            cv::ellipse(m_depthImage, box, ellipse_color, 5);
+            if (box.size.area() > 300) {
+                drawEllipse(box);
+                addToContacts(box);
+            }
         }
+    }
+    if (contacts.size() >= 2) {
+        drawContacts();
     }
 }
 
@@ -116,7 +149,7 @@ void Application::loop()
     
 	processFrame();
 
-//	cv::imshow("bgr", m_bgrImage);
+	cv::imshow("bgr", m_bgrImage);
 	cv::imshow("depth", m_depthImage);
 	cv::imshow("output", m_outputImage);
 }
@@ -141,7 +174,7 @@ Application::Application()
 	// open windows
 	cv::namedWindow("output", 1);
 	cv::namedWindow("depth", 1);
-//	cv::namedWindow("bgr", 1);
+	cv::namedWindow("bgr", 1);
     
     // add tracksbars
     cv::createTrackbar("blur_value", "output", &blur_size, 30);

@@ -16,6 +16,10 @@ public:
 	void processFrame();
     static bool isFoot(std::vector<cv::Point> contour);
     
+    void addToContacts(cv::RotatedRect);
+    void drawContacts();
+    void drawEllipse(cv::RotatedRect);
+    
 	void makeScreenshots();
 	void clearOutputImage();
 
@@ -31,6 +35,8 @@ protected:
 	cv::Mat m_outputImage;
     
     cv::Mat m_reference;
+    
+    std::vector<cv::RotatedRect> contacts;
     
     bool set_reference_image = false;
 	bool m_isFinished;
