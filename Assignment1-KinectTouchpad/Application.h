@@ -14,7 +14,8 @@ public:
 	void loop();
 
 	void processFrame();
-
+    static bool isFoot(std::vector<cv::Point> contour);
+    
 	void makeScreenshots();
 	void clearOutputImage();
 
@@ -28,7 +29,8 @@ protected:
 	cv::Mat m_bgrImage;
 	cv::Mat m_depthImage;
 	cv::Mat m_outputImage;
-    cv::Mat reference_image;
+    
+    cv::Mat m_reference;
     
     bool set_reference_image = false;
 	bool m_isFinished;

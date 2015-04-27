@@ -300,6 +300,8 @@
 					/usr/local/Cellar/openni/1.5.7.10/include/ni,
 					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
 					/usr/local/Cellar/opencv/2.4.10.1/include,
+					/usr/local/Cellar/opencv/2.4.11/include,
+					/usr/local/Cellar/opencv/2.4.11/include/opencv,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -372,6 +374,8 @@
 					/usr/local/Cellar/openni/1.5.7.10/include/ni,
 					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
 					/usr/local/Cellar/opencv/2.4.10.1/include,
+					/usr/local/Cellar/opencv/2.4.11/include,
+					/usr/local/Cellar/opencv/2.4.11/include/opencv,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -413,6 +417,15 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/openni/1.5.7.10/include/ni,
+					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
+					/usr/local/Cellar/opencv/2.4.10.1/include,
+					/usr/local/Cellar/opencv/2.4.11/include,
+					/usr/local/Cellar/opencv/2.4.11/include/opencv,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-Wall",
@@ -428,6 +441,15 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/Cellar/openni/1.5.7.10/include/ni,
+					/usr/local/Cellar/opencv/2.4.10.1/include/opencv,
+					/usr/local/Cellar/opencv/2.4.10.1/include,
+					/usr/local/Cellar/opencv/2.4.11/include,
+					/usr/local/Cellar/opencv/2.4.11/include/opencv,
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-Wall",
