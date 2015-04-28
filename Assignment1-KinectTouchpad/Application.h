@@ -17,7 +17,7 @@ public:
     static bool isFoot(std::vector<cv::Point> contour);
     
     void addToContacts(cv::RotatedRect);
-    void drawContacts();
+    void drawLines();
     void drawEllipse(cv::RotatedRect);
     
 	void makeScreenshots();

@@ -29,7 +29,7 @@ int brighten_factor = 15;
 static cv::Scalar ellipse_color = cv::Scalar(255,0,0);
 static cv::Scalar line_color = cv::Scalar(0,255,0);
 
-void Application::drawContacts()
+void Application::drawLines()
 {
     cv::Point from;
     cv::Point to;
@@ -108,21 +108,21 @@ void Application::processFrame()
     cv::findContours(m_contour, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
     
     // filter contures
-    contours.erase(std::remove_if(std::begin(contours), std::end(contours), isFoot), std::end(contours));
+//    contours.erase(std::remove_if(std::begin(contours), std::end(contours), isFoot), std::end(contours));
     
     // draw ellipses
     for (unsigned long i = 0; i < contours.size(); i++) {
         // less than 5 points throw an assertion error
         if (contours[i].size() >= 5) {
             cv::RotatedRect box = cv::fitEllipse(contours[i]);
-            if (box.size.area() > 300) {
+            if (box.size.area() > 200) {
                 drawEllipse(box);
                 addToContacts(box);
             }
         }
     }
     if (contacts.size() >= 2) {
-        drawContacts();
+        drawLines();
     }
 }
 
