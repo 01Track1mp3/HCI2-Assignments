@@ -19,6 +19,7 @@ public:
     void addToContacts(cv::RotatedRect);
     void drawLines();
     void drawEllipse(cv::RotatedRect);
+    void handleNoContact();
     
 	void makeScreenshots();
 	void clearOutputImage();
@@ -36,7 +37,7 @@ protected:
     
     cv::Mat m_reference;
     
-    std::vector<cv::RotatedRect> contacts;
+    std::vector<std::vector<cv::RotatedRect> > contacts;
     
     bool set_reference_image = false;
 	bool m_isFinished;
