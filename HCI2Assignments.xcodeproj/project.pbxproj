@@ -19,6 +19,31 @@
 		26A739E51AEABDB700750AD8 /* DepthCameraException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E01AEABDB700750AD8 /* DepthCameraException.cpp */; };
 		26A739E61AEABDB700750AD8 /* KinectMotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E21AEABDB700750AD8 /* KinectMotor.cpp */; };
 		26A739E81AEAC11600750AD8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 26A739E71AEAC11600750AD8 /* README.md */; };
+		26F892B51AF7BB090087F469 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892801AF7BB080087F469 /* Application.cpp */; };
+		26F892B61AF7BB090087F469 /* DepthCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892831AF7BB080087F469 /* DepthCamera.cpp */; };
+		26F892B71AF7BB090087F469 /* DepthCameraException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892851AF7BB080087F469 /* DepthCameraException.cpp */; };
+		26F892B81AF7BB090087F469 /* KinectMotor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892871AF7BB080087F469 /* KinectMotor.cpp */; };
+		26F892B91AF7BB090087F469 /* SkeletonTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892891AF7BB080087F469 /* SkeletonTracker.cpp */; };
+		26F892BA1AF7BB090087F469 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F8928B1AF7BB080087F469 /* main.cpp */; };
+		26F892BB1AF7BB090087F469 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F8928E1AF7BB080087F469 /* Game.cpp */; };
+		26F892BC1AF7BB090087F469 /* GameClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892901AF7BB080087F469 /* GameClient.cpp */; };
+		26F892BD1AF7BB090087F469 /* GameNetworkClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892921AF7BB080087F469 /* GameNetworkClient.cpp */; };
+		26F892BE1AF7BB090087F469 /* GameNetworkInterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892941AF7BB080087F469 /* GameNetworkInterface.cpp */; };
+		26F892BF1AF7BB090087F469 /* GameNetworkServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892961AF7BB080087F469 /* GameNetworkServer.cpp */; };
+		26F892C01AF7BB090087F469 /* GameObstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892981AF7BB080087F469 /* GameObstacle.cpp */; };
+		26F892C11AF7BB090087F469 /* GameServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F8929A1AF7BB080087F469 /* GameServer.cpp */; };
+		26F892C21AF7BB090087F469 /* GameUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F8929C1AF7BB080087F469 /* GameUnit.cpp */; };
+		26F892C31AF7BB090087F469 /* HighlightRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F8929E1AF7BB080087F469 /* HighlightRequest.cpp */; };
+		26F892C41AF7BB090087F469 /* Logging.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892A01AF7BB080087F469 /* Logging.cpp */; };
+		26F892C51AF7BB090087F469 /* Message.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892A21AF7BB080087F469 /* Message.cpp */; };
+		26F892C61AF7BB090087F469 /* MessageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892A41AF7BB080087F469 /* MessageData.cpp */; };
+		26F892C71AF7BB090087F469 /* MessageHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892A61AF7BB080087F469 /* MessageHandler.cpp */; };
+		26F892C81AF7BB090087F469 /* MoveRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892A91AF7BB080087F469 /* MoveRequest.cpp */; };
+		26F892C91AF7BB090087F469 /* NetworkClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892AB1AF7BB080087F469 /* NetworkClient.cpp */; };
+		26F892CA1AF7BB090087F469 /* NetworkServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892AD1AF7BB090087F469 /* NetworkServer.cpp */; };
+		26F892CB1AF7BB090087F469 /* NetworkServerSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892AF1AF7BB090087F469 /* NetworkServerSession.cpp */; };
+		26F892CC1AF7BB090087F469 /* NewPlayerID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892B11AF7BB090087F469 /* NewPlayerID.cpp */; };
+		26F892CD1AF7BB090087F469 /* PlayerProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26F892B31AF7BB090087F469 /* PlayerProfile.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +57,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		26A739B91AEABC8F00750AD8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		26F892771AF7BA9E0087F469 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -67,6 +101,58 @@
 		26A739E21AEABDB700750AD8 /* KinectMotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectMotor.cpp; sourceTree = "<group>"; };
 		26A739E31AEABDB700750AD8 /* KinectMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectMotor.h; sourceTree = "<group>"; };
 		26A739E71AEAC11600750AD8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26F892791AF7BA9E0087F469 /* Assignment2-uistGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Assignment2-uistGame"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26F892801AF7BB080087F469 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		26F892811AF7BB080087F469 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		26F892831AF7BB080087F469 /* DepthCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCamera.cpp; sourceTree = "<group>"; };
+		26F892841AF7BB080087F469 /* DepthCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCamera.h; sourceTree = "<group>"; };
+		26F892851AF7BB080087F469 /* DepthCameraException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthCameraException.cpp; sourceTree = "<group>"; };
+		26F892861AF7BB080087F469 /* DepthCameraException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepthCameraException.h; sourceTree = "<group>"; };
+		26F892871AF7BB080087F469 /* KinectMotor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectMotor.cpp; sourceTree = "<group>"; };
+		26F892881AF7BB080087F469 /* KinectMotor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectMotor.h; sourceTree = "<group>"; };
+		26F892891AF7BB080087F469 /* SkeletonTracker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonTracker.cpp; sourceTree = "<group>"; };
+		26F8928A1AF7BB080087F469 /* SkeletonTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonTracker.h; sourceTree = "<group>"; };
+		26F8928B1AF7BB080087F469 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		26F8928D1AF7BB080087F469 /* ForwardDeclarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForwardDeclarations.h; sourceTree = "<group>"; };
+		26F8928E1AF7BB080087F469 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		26F8928F1AF7BB080087F469 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		26F892901AF7BB080087F469 /* GameClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameClient.cpp; sourceTree = "<group>"; };
+		26F892911AF7BB080087F469 /* GameClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameClient.h; sourceTree = "<group>"; };
+		26F892921AF7BB080087F469 /* GameNetworkClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNetworkClient.cpp; sourceTree = "<group>"; };
+		26F892931AF7BB080087F469 /* GameNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNetworkClient.h; sourceTree = "<group>"; };
+		26F892941AF7BB080087F469 /* GameNetworkInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNetworkInterface.cpp; sourceTree = "<group>"; };
+		26F892951AF7BB080087F469 /* GameNetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNetworkInterface.h; sourceTree = "<group>"; };
+		26F892961AF7BB080087F469 /* GameNetworkServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameNetworkServer.cpp; sourceTree = "<group>"; };
+		26F892971AF7BB080087F469 /* GameNetworkServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameNetworkServer.h; sourceTree = "<group>"; };
+		26F892981AF7BB080087F469 /* GameObstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObstacle.cpp; sourceTree = "<group>"; };
+		26F892991AF7BB080087F469 /* GameObstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObstacle.h; sourceTree = "<group>"; };
+		26F8929A1AF7BB080087F469 /* GameServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameServer.cpp; sourceTree = "<group>"; };
+		26F8929B1AF7BB080087F469 /* GameServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServer.h; sourceTree = "<group>"; };
+		26F8929C1AF7BB080087F469 /* GameUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameUnit.cpp; sourceTree = "<group>"; };
+		26F8929D1AF7BB080087F469 /* GameUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameUnit.h; sourceTree = "<group>"; };
+		26F8929E1AF7BB080087F469 /* HighlightRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HighlightRequest.cpp; sourceTree = "<group>"; };
+		26F8929F1AF7BB080087F469 /* HighlightRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightRequest.h; sourceTree = "<group>"; };
+		26F892A01AF7BB080087F469 /* Logging.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Logging.cpp; sourceTree = "<group>"; };
+		26F892A11AF7BB080087F469 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		26F892A21AF7BB080087F469 /* Message.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Message.cpp; sourceTree = "<group>"; };
+		26F892A31AF7BB080087F469 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		26F892A41AF7BB080087F469 /* MessageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageData.cpp; sourceTree = "<group>"; };
+		26F892A51AF7BB080087F469 /* MessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageData.h; sourceTree = "<group>"; };
+		26F892A61AF7BB080087F469 /* MessageHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MessageHandler.cpp; sourceTree = "<group>"; };
+		26F892A71AF7BB080087F469 /* MessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandler.h; sourceTree = "<group>"; };
+		26F892A81AF7BB080087F469 /* MessageTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTypes.h; sourceTree = "<group>"; };
+		26F892A91AF7BB080087F469 /* MoveRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveRequest.cpp; sourceTree = "<group>"; };
+		26F892AA1AF7BB080087F469 /* MoveRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveRequest.h; sourceTree = "<group>"; };
+		26F892AB1AF7BB080087F469 /* NetworkClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkClient.cpp; sourceTree = "<group>"; };
+		26F892AC1AF7BB080087F469 /* NetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
+		26F892AD1AF7BB090087F469 /* NetworkServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkServer.cpp; sourceTree = "<group>"; };
+		26F892AE1AF7BB090087F469 /* NetworkServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkServer.h; sourceTree = "<group>"; };
+		26F892AF1AF7BB090087F469 /* NetworkServerSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkServerSession.cpp; sourceTree = "<group>"; };
+		26F892B01AF7BB090087F469 /* NetworkServerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkServerSession.h; sourceTree = "<group>"; };
+		26F892B11AF7BB090087F469 /* NewPlayerID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewPlayerID.cpp; sourceTree = "<group>"; };
+		26F892B21AF7BB090087F469 /* NewPlayerID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPlayerID.h; sourceTree = "<group>"; };
+		26F892B31AF7BB090087F469 /* PlayerProfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerProfile.cpp; sourceTree = "<group>"; };
+		26F892B41AF7BB090087F469 /* PlayerProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerProfile.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +170,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26F892761AF7BA9E0087F469 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +186,7 @@
 				26A739E71AEAC11600750AD8 /* README.md */,
 				26A739981AEAA4C900750AD8 /* Demo */,
 				26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */,
+				26F8927A1AF7BA9E0087F469 /* Assignment2-uistGame */,
 				26A739971AEAA4C900750AD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +196,7 @@
 			children = (
 				26A739961AEAA4C900750AD8 /* Demo */,
 				26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
+				26F892791AF7BA9E0087F469 /* Assignment2-uistGame */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +252,80 @@
 			path = framework;
 			sourceTree = "<group>";
 		};
+		26F8927A1AF7BA9E0087F469 /* Assignment2-uistGame */ = {
+			isa = PBXGroup;
+			children = (
+				26F892801AF7BB080087F469 /* Application.cpp */,
+				26F892811AF7BB080087F469 /* Application.h */,
+				26F892821AF7BB080087F469 /* framework */,
+				26F8928B1AF7BB080087F469 /* main.cpp */,
+				26F8928C1AF7BB080087F469 /* uist-game */,
+			);
+			path = "Assignment2-uistGame";
+			sourceTree = "<group>";
+		};
+		26F892821AF7BB080087F469 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				26F892831AF7BB080087F469 /* DepthCamera.cpp */,
+				26F892841AF7BB080087F469 /* DepthCamera.h */,
+				26F892851AF7BB080087F469 /* DepthCameraException.cpp */,
+				26F892861AF7BB080087F469 /* DepthCameraException.h */,
+				26F892871AF7BB080087F469 /* KinectMotor.cpp */,
+				26F892881AF7BB080087F469 /* KinectMotor.h */,
+				26F892891AF7BB080087F469 /* SkeletonTracker.cpp */,
+				26F8928A1AF7BB080087F469 /* SkeletonTracker.h */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		26F8928C1AF7BB080087F469 /* uist-game */ = {
+			isa = PBXGroup;
+			children = (
+				26F8928D1AF7BB080087F469 /* ForwardDeclarations.h */,
+				26F8928E1AF7BB080087F469 /* Game.cpp */,
+				26F8928F1AF7BB080087F469 /* Game.h */,
+				26F892901AF7BB080087F469 /* GameClient.cpp */,
+				26F892911AF7BB080087F469 /* GameClient.h */,
+				26F892921AF7BB080087F469 /* GameNetworkClient.cpp */,
+				26F892931AF7BB080087F469 /* GameNetworkClient.h */,
+				26F892941AF7BB080087F469 /* GameNetworkInterface.cpp */,
+				26F892951AF7BB080087F469 /* GameNetworkInterface.h */,
+				26F892961AF7BB080087F469 /* GameNetworkServer.cpp */,
+				26F892971AF7BB080087F469 /* GameNetworkServer.h */,
+				26F892981AF7BB080087F469 /* GameObstacle.cpp */,
+				26F892991AF7BB080087F469 /* GameObstacle.h */,
+				26F8929A1AF7BB080087F469 /* GameServer.cpp */,
+				26F8929B1AF7BB080087F469 /* GameServer.h */,
+				26F8929C1AF7BB080087F469 /* GameUnit.cpp */,
+				26F8929D1AF7BB080087F469 /* GameUnit.h */,
+				26F8929E1AF7BB080087F469 /* HighlightRequest.cpp */,
+				26F8929F1AF7BB080087F469 /* HighlightRequest.h */,
+				26F892A01AF7BB080087F469 /* Logging.cpp */,
+				26F892A11AF7BB080087F469 /* Logging.h */,
+				26F892A21AF7BB080087F469 /* Message.cpp */,
+				26F892A31AF7BB080087F469 /* Message.h */,
+				26F892A41AF7BB080087F469 /* MessageData.cpp */,
+				26F892A51AF7BB080087F469 /* MessageData.h */,
+				26F892A61AF7BB080087F469 /* MessageHandler.cpp */,
+				26F892A71AF7BB080087F469 /* MessageHandler.h */,
+				26F892A81AF7BB080087F469 /* MessageTypes.h */,
+				26F892A91AF7BB080087F469 /* MoveRequest.cpp */,
+				26F892AA1AF7BB080087F469 /* MoveRequest.h */,
+				26F892AB1AF7BB080087F469 /* NetworkClient.cpp */,
+				26F892AC1AF7BB080087F469 /* NetworkClient.h */,
+				26F892AD1AF7BB090087F469 /* NetworkServer.cpp */,
+				26F892AE1AF7BB090087F469 /* NetworkServer.h */,
+				26F892AF1AF7BB090087F469 /* NetworkServerSession.cpp */,
+				26F892B01AF7BB090087F469 /* NetworkServerSession.h */,
+				26F892B11AF7BB090087F469 /* NewPlayerID.cpp */,
+				26F892B21AF7BB090087F469 /* NewPlayerID.h */,
+				26F892B31AF7BB090087F469 /* PlayerProfile.cpp */,
+				26F892B41AF7BB090087F469 /* PlayerProfile.h */,
+			);
+			path = "uist-game";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +363,23 @@
 			productReference = 26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */;
 			productType = "com.apple.product-type.tool";
 		};
+		26F892781AF7BA9E0087F469 /* Assignment2-uistGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F8927F1AF7BA9E0087F469 /* Build configuration list for PBXNativeTarget "Assignment2-uistGame" */;
+			buildPhases = (
+				26F892751AF7BA9E0087F469 /* Sources */,
+				26F892761AF7BA9E0087F469 /* Frameworks */,
+				26F892771AF7BA9E0087F469 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Assignment2-uistGame";
+			productName = "Assignment2-uistGame";
+			productReference = 26F892791AF7BA9E0087F469 /* Assignment2-uistGame */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +394,9 @@
 					};
 					26A739BA1AEABC8F00750AD8 = {
 						CreatedOnToolsVersion = 6.3;
+					};
+					26F892781AF7BA9E0087F469 = {
+						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
 			};
@@ -225,6 +414,7 @@
 			targets = (
 				26A739951AEAA4C900750AD8 /* Demo */,
 				26A739BA1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
+				26F892781AF7BA9E0087F469 /* Assignment2-uistGame */,
 			);
 		};
 /* End PBXProject section */
@@ -253,6 +443,38 @@
 				26A739D71AEABD2600750AD8 /* DepthCameraException.cpp in Sources */,
 				26A739DB1AEABD2600750AD8 /* main.cpp in Sources */,
 				26A739D91AEABD2600750AD8 /* KinectMotor.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26F892751AF7BA9E0087F469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26F892BC1AF7BB090087F469 /* GameClient.cpp in Sources */,
+				26F892C31AF7BB090087F469 /* HighlightRequest.cpp in Sources */,
+				26F892B61AF7BB090087F469 /* DepthCamera.cpp in Sources */,
+				26F892C41AF7BB090087F469 /* Logging.cpp in Sources */,
+				26F892C81AF7BB090087F469 /* MoveRequest.cpp in Sources */,
+				26F892B91AF7BB090087F469 /* SkeletonTracker.cpp in Sources */,
+				26F892BA1AF7BB090087F469 /* main.cpp in Sources */,
+				26F892C01AF7BB090087F469 /* GameObstacle.cpp in Sources */,
+				26F892C21AF7BB090087F469 /* GameUnit.cpp in Sources */,
+				26F892CD1AF7BB090087F469 /* PlayerProfile.cpp in Sources */,
+				26F892BE1AF7BB090087F469 /* GameNetworkInterface.cpp in Sources */,
+				26F892C71AF7BB090087F469 /* MessageHandler.cpp in Sources */,
+				26F892BF1AF7BB090087F469 /* GameNetworkServer.cpp in Sources */,
+				26F892B51AF7BB090087F469 /* Application.cpp in Sources */,
+				26F892CB1AF7BB090087F469 /* NetworkServerSession.cpp in Sources */,
+				26F892B71AF7BB090087F469 /* DepthCameraException.cpp in Sources */,
+				26F892C51AF7BB090087F469 /* Message.cpp in Sources */,
+				26F892C61AF7BB090087F469 /* MessageData.cpp in Sources */,
+				26F892C91AF7BB090087F469 /* NetworkClient.cpp in Sources */,
+				26F892CA1AF7BB090087F469 /* NetworkServer.cpp in Sources */,
+				26F892BD1AF7BB090087F469 /* GameNetworkClient.cpp in Sources */,
+				26F892CC1AF7BB090087F469 /* NewPlayerID.cpp in Sources */,
+				26F892B81AF7BB090087F469 /* KinectMotor.cpp in Sources */,
+				26F892C11AF7BB090087F469 /* GameServer.cpp in Sources */,
+				26F892BB1AF7BB090087F469 /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +524,7 @@
 					/usr/local/Cellar/opencv/2.4.10.1/include,
 					/usr/local/Cellar/opencv/2.4.11/include,
 					/usr/local/Cellar/opencv/2.4.11/include/opencv,
+					/usr/local/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -334,6 +557,10 @@
 					"-lopencv_ts",
 					"-lopencv_video",
 					"-lopencv_videostab",
+					"-L/usr/local/lib",
+					"-lboost_thread-mt",
+					"-lboost_system-mt",
+					"-lboost_signals-mt",
 				);
 				SDKROOT = macosx;
 			};
@@ -376,6 +603,7 @@
 					/usr/local/Cellar/opencv/2.4.10.1/include,
 					/usr/local/Cellar/opencv/2.4.11/include,
 					/usr/local/Cellar/opencv/2.4.11/include/opencv,
+					/usr/local/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -407,6 +635,10 @@
 					"-lopencv_ts",
 					"-lopencv_video",
 					"-lopencv_videostab",
+					"-L/usr/local/lib",
+					"-lboost_thread-mt",
+					"-lboost_system-mt",
+					"-lboost_signals-mt",
 				);
 				SDKROOT = macosx;
 			};
@@ -478,6 +710,24 @@
 			};
 			name = Release;
 		};
+		26F8927D1AF7BA9E0087F469 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		26F8927E1AF7BA9E0087F469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +757,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		26F8927F1AF7BA9E0087F469 /* Build configuration list for PBXNativeTarget "Assignment2-uistGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26F8927D1AF7BA9E0087F469 /* Debug */,
+				26F8927E1AF7BA9E0087F469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
