@@ -14,12 +14,14 @@
 
 class DigitRecognizer
 {
-    
-    public:
-        static int recognizeDigit(std::vector<cv::Point> pointVector);
-    
 
-    
+public:
+    DigitRecognizer();
+    int recognizeDigit(std::vector<cv::Point> pointVector);
+    void drawLine(std::vector<cv::Point> lineVector);
+    void sample(std::vector<cv::Point> input, std::vector<cv::Point> output, int pointCount);
+    cv::Mat *m_digitImage;
+
 };
 
 
