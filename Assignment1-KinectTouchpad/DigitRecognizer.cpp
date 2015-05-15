@@ -9,6 +9,7 @@
 #include "DigitRecognizer.h"
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
+#include "DataSet.h"
 
 using namespace cv;
 using namespace std;
@@ -21,8 +22,6 @@ int DigitRecognizer::recognizeDigit(vector<Point> pointVector) {
     
     approxPolyDP(pointVector, simplifiedPointVector, 3, false);
     cout << pointVector.size() << " " << simplifiedPointVector.size() << endl;
-    
-    return 1;
 }
 
 void drawLastLine(vector<Point> subVector)
