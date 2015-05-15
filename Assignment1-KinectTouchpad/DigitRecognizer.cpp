@@ -8,6 +8,8 @@
 
 #include "DigitRecognizer.h"
 
+#include "DataSet.h"
+
 int DigitRecognizer::recognizeDigit(std::vector<cv::Point> pointVector) {
     return 1;
 }

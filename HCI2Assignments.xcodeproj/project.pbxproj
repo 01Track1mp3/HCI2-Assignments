@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03F34CC11B06312A00316DDC /* DataSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 03F34CBF1B06312A00316DDC /* DataSet.cpp */; };
 		264B28621B06105700596871 /* DigitRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 264B28601B06105700596871 /* DigitRecognizer.cpp */; };
 		26A739A51AEAA56A00750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A01AEAA56A00750AD8 /* Application.cpp */; };
 		26A739A61AEAA56A00750AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A31AEAA56A00750AD8 /* main.cpp */; };
@@ -78,6 +79,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03F34CBF1B06312A00316DDC /* DataSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataSet.cpp; sourceTree = "<group>"; };
+		03F34CC01B06312A00316DDC /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		264B28601B06105700596871 /* DigitRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DigitRecognizer.cpp; sourceTree = "<group>"; };
 		264B28611B06105700596871 /* DigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitRecognizer.h; sourceTree = "<group>"; };
 		26A739961AEAA4C900750AD8 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,8 @@
 		26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */ = {
 			isa = PBXGroup;
 			children = (
+				03F34CBF1B06312A00316DDC /* DataSet.cpp */,
+				03F34CC01B06312A00316DDC /* DataSet.h */,
 				26A739C21AEABD2600750AD8 /* Application.cpp */,
 				26A739C31AEABD2600750AD8 /* Application.h */,
 				26A739C51AEABD2600750AD8 /* framework */,
@@ -444,6 +449,7 @@
 			files = (
 				26A739DD1AEABD2600750AD8 /* Makefile in Sources */,
 				26A739D51AEABD2600750AD8 /* DepthCamera.cpp in Sources */,
+				03F34CC11B06312A00316DDC /* DataSet.cpp in Sources */,
 				26A739D31AEABD2600750AD8 /* Application.cpp in Sources */,
 				26A739D71AEABD2600750AD8 /* DepthCameraException.cpp in Sources */,
 				26A739DB1AEABD2600750AD8 /* main.cpp in Sources */,
