@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264B28621B06105700596871 /* DigitRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 264B28601B06105700596871 /* DigitRecognizer.cpp */; };
 		26A739A51AEAA56A00750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A01AEAA56A00750AD8 /* Application.cpp */; };
 		26A739A61AEAA56A00750AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A31AEAA56A00750AD8 /* main.cpp */; };
 		26A739D31AEABD2600750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739C21AEABD2600750AD8 /* Application.cpp */; };
@@ -77,6 +78,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		264B28601B06105700596871 /* DigitRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DigitRecognizer.cpp; sourceTree = "<group>"; };
+		264B28611B06105700596871 /* DigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitRecognizer.h; sourceTree = "<group>"; };
 		26A739961AEAA4C900750AD8 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A739A01AEAA56A00750AD8 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		26A739A11AEAA56A00750AD8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				26A739CF1AEABD2600750AD8 /* main */,
 				26A739D01AEABD2600750AD8 /* main.cpp */,
 				26A739D21AEABD2600750AD8 /* Makefile */,
+				264B28601B06105700596871 /* DigitRecognizer.cpp */,
+				264B28611B06105700596871 /* DigitRecognizer.h */,
 			);
 			path = "Assignment1-KinectTouchpad";
 			sourceTree = "<group>";
@@ -442,6 +447,7 @@
 				26A739D31AEABD2600750AD8 /* Application.cpp in Sources */,
 				26A739D71AEABD2600750AD8 /* DepthCameraException.cpp in Sources */,
 				26A739DB1AEABD2600750AD8 /* main.cpp in Sources */,
+				264B28621B06105700596871 /* DigitRecognizer.cpp in Sources */,
 				26A739D91AEABD2600750AD8 /* KinectMotor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +771,7 @@
 				26F8927E1AF7BA9E0087F469 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

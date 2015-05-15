@@ -18,10 +18,12 @@
 #include "framework/DepthCamera.h"
 #include "framework/KinectMotor.h"
 
+#include "DigitRecognizer.h"
+
 int first_thresh = 4;
 int second_thresh = 2;
 int blur_size = 13;
-int min_foot_area = 500;
+int min_foot_area = 100;
 
 int noContactCount = 0;
 int noContactThresh = 10;
@@ -39,26 +41,41 @@ void Application::drawLines()
     cv::Point to;
     
     for (int i = 0; i < contacts.size(); i++) {
-        std::vector<cv::RotatedRect> subVector = contacts[i];
+        std::vector<cv::Point> subVector = contacts[i];
         if (subVector.size() > 2) {
             for (int j = 0; j < subVector.size() - 1; j++) {
-                from = subVector[j].center;
-                to = subVector[j + 1].center;
+                from = subVector[j];
+                to = subVector[j + 1];
                 cv::line(m_bgrImage, from, to, line_color, 4);
             }
         }
     }
 }
 
+void Application::drawLastLine()
+{
+    cv::Point from;
+    cv::Point to;
+    
+    std::vector<cv::Point> subVector = contacts[contacts.size() - 1];
+    if (subVector.size() > 2) {
+        for (int j = 0; j < subVector.size() - 1; j++) {
+            from = subVector[j];
+            to = subVector[j + 1];
+            cv::line(m_bgrImage, from, to, line_color, 4);
+        }
+    }
+}
+
 void Application::addToContacts(cv::RotatedRect box)
 {
-    contacts.back().push_back(box);
+    contacts.back().push_back(box.center);
 }
 
 void Application::handleNoContact() {
     noContactCount++;
     if (noContactCount > noContactThresh) {
-        contacts.push_back(std::vector<cv::RotatedRect>());
+        contacts.push_back(std::vector<cv::Point>());
         noContactCount = 0;
         startedNewDrawing = true;
     }
@@ -66,6 +83,7 @@ void Application::handleNoContact() {
 
 bool Application::isFoot(std::vector<cv::Point> contour)
 {
+    std::cout << cv::contourArea(contour) << std::endl;
     return cv::contourArea(contour) > min_foot_area;
 }
 
@@ -116,23 +134,26 @@ void Application::processFrame()
     cv::findContours(m_contour, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
     
     // filter contures
-    contours.erase(std::remove_if(std::begin(contours), std::end(contours), isFoot), std::end(contours));
+//    contours.erase(std::remove_if(std::begin(contours), std::end(contours), isFoot), std::end(contours));
     
     bool hadContact = false;
     // draw ellipses
     for (unsigned long i = 0; i < contours.size(); i++) {
         // less than 5 points throw an assertion error
+//        std::cout << contours[i].size() << std::endl;
         if (contours[i].size() >= 5) {
             cv::RotatedRect box = cv::fitEllipse(contours[i]);
-            if (box.size.area() > 400) {
+            if (isFoot(contours[i])) {
                 drawEllipse(box);
                 addToContacts(box);
                 hadContact = true;
             }
         }
     }
+    
     if (contacts.size() >= 1) {
-        drawLines();
+        drawLastLine();
+        DigitRecognizer::recognizeDigit(contacts[contacts.size() - 1]);
     }
     if (!hadContact) {
         if (!startedNewDrawing) {
@@ -207,7 +228,7 @@ Application::Application()
     
     m_reference = cv::Mat(480, 640, CV_16UC1);
     
-    contacts.push_back(std::vector<cv::RotatedRect>());
+    contacts.push_back(std::vector<cv::Point>());
 }
 
 Application::~Application()

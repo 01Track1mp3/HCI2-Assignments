@@ -18,11 +18,14 @@ public:
     
     void addToContacts(cv::RotatedRect);
     void drawLines();
+    void drawLastLine();
     void drawEllipse(cv::RotatedRect);
     void handleNoContact();
     
 	void makeScreenshots();
 	void clearOutputImage();
+    
+    int recognizeDigit();
 
 	bool isFinished();
 
@@ -37,7 +40,7 @@ protected:
     
     cv::Mat m_reference;
     
-    std::vector<std::vector<cv::RotatedRect> > contacts;
+    std::vector<std::vector<cv::Point> > contacts;
     
     bool set_reference_image = false;
 	bool m_isFinished;
