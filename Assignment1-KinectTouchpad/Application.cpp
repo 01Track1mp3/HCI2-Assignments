@@ -153,7 +153,7 @@ void Application::processFrame()
     
     if (contacts.size() >= 1 && contacts[contacts.size() - 1].size() > 0) {
         drawLastLine();
-        DigitRecognizer::recognizeDigit(contacts[contacts.size() - 1]);
+        digitRecognizer.recognizeDigit(contacts[contacts.size() - 1]);
     }
     if (!hadContact) {
         if (!startedNewDrawing) {
@@ -213,6 +213,7 @@ Application::Application()
 	m_depthCamera = new DepthCamera;
     digitRecognizer = new DigitRecognizer;
 
+
 	// open windows
 	cv::namedWindow("output", 1);
 	cv::namedWindow("depth", 1);
@@ -229,6 +230,8 @@ Application::Application()
 	m_depthImage = cv::Mat(480, 640, CV_16UC1);
 	m_outputImage = cv::Mat(480, 640, CV_8UC1);
     m_digitImage = cv::Mat(480, 640, CV_8UC1);
+    
+    digitRecognizer.m_digitImage = &m_digitImage;
     
     m_reference = cv::Mat(480, 640, CV_16UC1);
     

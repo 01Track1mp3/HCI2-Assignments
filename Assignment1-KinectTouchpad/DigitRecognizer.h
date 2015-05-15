@@ -14,8 +14,9 @@
 
 class DigitRecognizer
 {
-    public:
-    static int recognizeDigit(std::vector<cv::Point> pointVector);
+public:
+    int recognizeDigit(std::vector<cv::Point> pointVector);
+    cv::Mat *m_digitImage;
 };
 
 

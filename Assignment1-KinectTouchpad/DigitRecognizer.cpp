@@ -24,6 +24,11 @@ int DigitRecognizer::recognizeDigit(vector<Point> pointVector) {
     cout << pointVector.size() << " " << simplifiedPointVector.size() << endl;
 }
 
+DigitRecognizer::DigitRecognizer(): m_digitImage(nullptr)
+{
+    // load dataset
+}
+
 void drawLastLine(vector<Point> subVector)
 {
     cv::Point from;
