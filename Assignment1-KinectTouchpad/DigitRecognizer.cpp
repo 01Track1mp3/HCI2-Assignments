@@ -14,6 +14,8 @@
 using namespace cv;
 using namespace std;
 
+static cv::Scalar line_color = cv::Scalar(0,0,255);
+
 int DigitRecognizer::recognizeDigit(vector<Point> pointVector) {
     
     assert(pointVector.size() > 0);
@@ -22,18 +24,22 @@ int DigitRecognizer::recognizeDigit(vector<Point> pointVector) {
     
     approxPolyDP(pointVector, simplifiedPointVector, 3, false);
     cout << pointVector.size() << " " << simplifiedPointVector.size() << endl;
+    
+    drawLine(simplifiedPointVector);
 }
 
-void drawLastLine(vector<Point> subVector)
+void DigitRecognizer::drawLine(vector<Point> lineVector)
 {
-    cv::Point from;
-    cv::Point to;
+    Point from;
+    Point to;
     
-    if (subVector.size() > 2) {
-        for (int j = 0; j < subVector.size() - 1; j++) {
-            from = subVector[j];
-            to = subVector[j + 1];
-            cv::line(m_bgrImage, from, to, line_color, 4);
+    if (lineVector.size() > 2) {
+        for (int j = 0; j < lineVector.size() - 1; j++) {
+            from = lineVector[j];
+            to = lineVector[j + 1];
+            
+            // draw the line
+            line(m_digitImage, from, to, line_color, 4);
         }
     }
 }
