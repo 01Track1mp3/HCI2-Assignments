@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		264B28621B06105700596871 /* DigitRecognizer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 264B28601B06105700596871 /* DigitRecognizer.cpp */; };
+		264B286A1B06305200596871 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 264B28691B06305200596871 /* main.cpp */; };
 		26A739A51AEAA56A00750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A01AEAA56A00750AD8 /* Application.cpp */; };
 		26A739A61AEAA56A00750AD8 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739A31AEAA56A00750AD8 /* main.cpp */; };
 		26A739D31AEABD2600750AD8 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 26A739C21AEABD2600750AD8 /* Application.cpp */; };
@@ -48,6 +49,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		264B28651B06305200596871 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		26A739941AEAA4C900750AD8 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +90,8 @@
 /* Begin PBXFileReference section */
 		264B28601B06105700596871 /* DigitRecognizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DigitRecognizer.cpp; sourceTree = "<group>"; };
 		264B28611B06105700596871 /* DigitRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitRecognizer.h; sourceTree = "<group>"; };
+		264B28671B06305200596871 /* ContoursTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ContoursTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		264B28691B06305200596871 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		26A739961AEAA4C900750AD8 /* Demo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Demo; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A739A01AEAA56A00750AD8 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
 		26A739A11AEAA56A00750AD8 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
@@ -159,6 +171,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		264B28641B06305200596871 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		26A739931AEAA4C900750AD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +202,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264B28681B06305200596871 /* ContoursTest */ = {
+			isa = PBXGroup;
+			children = (
+				264B28691B06305200596871 /* main.cpp */,
+			);
+			path = ContoursTest;
+			sourceTree = "<group>";
+		};
 		26A7398D1AEAA4C900750AD8 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +217,7 @@
 				26A739981AEAA4C900750AD8 /* Demo */,
 				26A739BC1AEABC9000750AD8 /* Assignment1-KinectTouchpad */,
 				26F8927A1AF7BA9E0087F469 /* Assignment2-uistGame */,
+				264B28681B06305200596871 /* ContoursTest */,
 				26A739971AEAA4C900750AD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +228,7 @@
 				26A739961AEAA4C900750AD8 /* Demo */,
 				26A739BB1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
 				26F892791AF7BA9E0087F469 /* Assignment2-uistGame */,
+				264B28671B06305200596871 /* ContoursTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +363,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		264B28661B06305200596871 /* ContoursTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 264B286D1B06305200596871 /* Build configuration list for PBXNativeTarget "ContoursTest" */;
+			buildPhases = (
+				264B28631B06305200596871 /* Sources */,
+				264B28641B06305200596871 /* Frameworks */,
+				264B28651B06305200596871 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContoursTest;
+			productName = ContoursTest;
+			productReference = 264B28671B06305200596871 /* ContoursTest */;
+			productType = "com.apple.product-type.tool";
+		};
 		26A739951AEAA4C900750AD8 /* Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26A7399D1AEAA4C900750AD8 /* Build configuration list for PBXNativeTarget "Demo" */;
@@ -394,6 +440,9 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Sven Mischkewitz";
 				TargetAttributes = {
+					264B28661B06305200596871 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
 					26A739951AEAA4C900750AD8 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -420,11 +469,20 @@
 				26A739951AEAA4C900750AD8 /* Demo */,
 				26A739BA1AEABC8F00750AD8 /* Assignment1-KinectTouchpad */,
 				26F892781AF7BA9E0087F469 /* Assignment2-uistGame */,
+				264B28661B06305200596871 /* ContoursTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		264B28631B06305200596871 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264B286A1B06305200596871 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		26A739921AEAA4C900750AD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -487,6 +545,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		264B286B1B06305200596871 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		264B286C1B06305200596871 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		26A7399B1AEAA4C900750AD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -737,6 +813,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		264B286D1B06305200596871 /* Build configuration list for PBXNativeTarget "ContoursTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				264B286B1B06305200596871 /* Debug */,
+				264B286C1B06305200596871 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		26A739911AEAA4C900750AD8 /* Build configuration list for PBXProject "HCI2Assignments" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

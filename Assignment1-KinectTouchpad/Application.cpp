@@ -151,7 +151,7 @@ void Application::processFrame()
         }
     }
     
-    if (contacts.size() >= 1) {
+    if (contacts.size() >= 1 && contacts[contacts.size() - 1].size() > 0) {
         drawLastLine();
         DigitRecognizer::recognizeDigit(contacts[contacts.size() - 1]);
     }
@@ -192,6 +192,7 @@ void Application::loop()
 	cv::imshow("bgr", m_bgrImage);
 	cv::imshow("depth", m_depthImage);
 	cv::imshow("output", m_outputImage);
+    cv::imshow("digit", m_digitImage);
 }
 
 void Application::makeScreenshots()
@@ -210,11 +211,13 @@ Application::Application()
 	// m_kinectMotor = new KinectMotor;
 
 	m_depthCamera = new DepthCamera;
+    digitRecognizer = new DigitRecognizer;
 
 	// open windows
 	cv::namedWindow("output", 1);
 	cv::namedWindow("depth", 1);
 	cv::namedWindow("bgr", 1);
+    cv::namedWindow("digit", 1);
     
     // add tracksbars
     cv::createTrackbar("blur_value", "output", &blur_size, 30);
@@ -225,6 +228,7 @@ Application::Application()
 	m_bgrImage = cv::Mat(480, 640, CV_8UC3);
 	m_depthImage = cv::Mat(480, 640, CV_16UC1);
 	m_outputImage = cv::Mat(480, 640, CV_8UC1);
+    m_digitImage = cv::Mat(480, 640, CV_8UC1);
     
     m_reference = cv::Mat(480, 640, CV_16UC1);
     
@@ -235,6 +239,7 @@ Application::~Application()
 {
 	if (m_depthCamera) delete m_depthCamera;
 	if (m_kinectMotor) delete m_kinectMotor;
+    if (digitRecognizer) delete digitRecognizer;
 }
 
 bool Application::isFinished()

@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>ContoursTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>Demo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>264B28661B06305200596871</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>26A739951AEAA4C900750AD8</key>
 		<dict>
 			<key>primary</key>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <opencv2/core/core.hpp>
+#include "DigitRecognizer.h"
 
 class DepthCamera;
 class KinectMotor;
@@ -33,12 +34,15 @@ public:
 protected:
 	DepthCamera *m_depthCamera;
 	KinectMotor *m_kinectMotor;
+    DigitRecognizer *digitRecognizer;
 
 	cv::Mat m_bgrImage;
 	cv::Mat m_depthImage;
 	cv::Mat m_outputImage;
     
     cv::Mat m_reference;
+    cv::Mat m_digitImage;
+    
     
     std::vector<std::vector<cv::Point> > contacts;
     
