@@ -32,13 +32,58 @@ int DigitRecognizer::recognizeDigit(vector<Point> pointVector) {
     
     // downsampling
     vector<Point> samplePoints = vector<Point>();
-    sample(simplifiedPointVector, samplePoints, 8);
+    sample(simplifiedPointVector, &samplePoints, 8);
     
     // debug output
-    (*m_digitImage) = cv::Mat(480, 640, CV_8UC3);
+//    (*m_digitImage) = cv::Mat(480, 640, CV_8UC3);
     drawLine(samplePoints);
     
+    vector<Point> bbox = getBBox(samplePoints);
+    vector<Point2f> normalizedPoints;
+    normalizePoints(&samplePoints, &normalizedPoints, bbox);
+    
+    cout << normalizedPoints << endl;
+    
     return 1;
+}
+
+vector<Point> DigitRecognizer::getBBox(vector<Point> points)
+{
+    Point bottomLeft = points[0];
+    Point topRight = points[0];
+    Point current;
+    
+    for (int i = 1; i < points.size(); i++) {
+        current = points[i];
+        
+        if (current.x < bottomLeft.x ) {
+            bottomLeft.x = current.x;
+        } else if (current.x > topRight.x) {
+            topRight.x = current.x;
+        }
+        
+        if (current.y < bottomLeft.y) {
+            bottomLeft.y = current.y;
+        } else if (current.y > topRight.y) {
+            topRight.y = current.y;
+        }
+    }
+    
+    return {bottomLeft, topRight};
+}
+
+void DigitRecognizer::normalizePoints(vector<Point> *points, vector<Point2f> *normalizedPoints, vector<Point> bbox)
+{
+    Point shiftToZero = bbox[0];
+    Point scaleToOne = bbox[1] - shiftToZero;
+    
+    Point2f tempPoint;
+    for (int i = 0; i < points->size(); i++) {
+        tempPoint = (points->at(i) - shiftToZero);
+        tempPoint.x /= (float)scaleToOne.x;
+        tempPoint.y /= (float)scaleToOne.y;
+        normalizedPoints->push_back(tempPoint);
+    }
 }
 
 float getLengthOfLine(Point a, Point b) {
@@ -59,10 +104,10 @@ Point getPointInDirection(Point from, Point to, float distance) {
     return (distance / getLengthOfLine(from, to)) * (to - from) + from;
 }
 
-void DigitRecognizer::sample(vector<Point> input, vector<Point> output, int pointCount)
+void DigitRecognizer::sample(vector<Point> input, vector<Point> *output, int pointCount)
 {
     // initialize first point
-    output.push_back(input[0]);
+    output->push_back(input[0]);
     
     // get length
     float length = getLengthOfLines(input);
@@ -85,7 +130,7 @@ void DigitRecognizer::sample(vector<Point> input, vector<Point> output, int poin
             // get point on the line and put to output array
             restLength -= lengthBuffer;
             from = getPointInDirection(from, to, getLengthOfLine(from, to) - restLength);
-            output.push_back(from);
+            output->push_back(from);
             
             // line chunk was reached... reset buffer
             lengthBuffer = lengthChunk;

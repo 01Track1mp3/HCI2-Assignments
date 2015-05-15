@@ -84,7 +84,7 @@ void Application::handleNoContact() {
 
 bool Application::isFoot(std::vector<cv::Point> contour)
 {
-    std::cout << cv::contourArea(contour) << std::endl;
+//    std::cout << cv::contourArea(contour) << std::endl;
     return cv::contourArea(contour) > min_foot_area;
 }
 
@@ -186,6 +186,8 @@ void Application::loop()
         m_reference *= brighten_factor;
         captured_reference = true;
     }
+    
+    m_digitImage = m_bgrImage;
     
 	processFrame();
 

@@ -19,8 +19,12 @@ public:
     DigitRecognizer();
     int recognizeDigit(std::vector<cv::Point> pointVector);
     void drawLine(std::vector<cv::Point> lineVector);
-    void sample(std::vector<cv::Point> input, std::vector<cv::Point> output, int pointCount);
+    void sample(std::vector<cv::Point> input, std::vector<cv::Point> *output, int pointCount);
     cv::Mat *m_digitImage;
+    
+protected:
+    std::vector<cv::Point> getBBox(std::vector<cv::Point> points);
+    void normalizePoints(std::vector<cv::Point> *points, std::vector<cv::Point2f> *normalizedPoints, std::vector<cv::Point> bbox);
 
 };
 
