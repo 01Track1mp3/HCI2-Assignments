@@ -25,8 +25,6 @@ public:
     
 	void makeScreenshots();
 	void clearOutputImage();
-    
-    int recognizeDigit();
 
 	bool isFinished();
 
@@ -42,6 +40,11 @@ protected:
     
     cv::Mat m_reference;
     cv::Mat m_digitImage;
+    
+    int digit;
+    float precision;
+    bool hasDigit = false;
+    void drawDigit();
     
     
     std::vector<std::vector<cv::Point> > contacts;
