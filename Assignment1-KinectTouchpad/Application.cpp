@@ -34,6 +34,7 @@ int brighten_factor = 15;
 
 static cv::Scalar ellipse_color = cv::Scalar(255,0,0);
 static cv::Scalar line_color = cv::Scalar(0,255,0);
+static cv::Scalar black_color = cv::Scalar(0,0,0);
 
 void Application::drawLines()
 {
@@ -75,7 +76,10 @@ void Application::addToContacts(cv::RotatedRect box)
 void Application::handleNoContact() {
     noContactCount++;
     if (noContactCount > noContactThresh) {
-        digitRecognizer->recognizeDigit(contacts[contacts.size() - 1]);
+        std::pair<int, float> pairr = digitRecognizer->recognizeDigit(contacts[contacts.size() - 1]);
+        digit = pairr.first;
+        precision = pairr.second;
+        hasDigit = true;
         contacts.push_back(std::vector<cv::Point>());
         noContactCount = 0;
         startedNewDrawing = true;
@@ -166,6 +170,13 @@ void Application::processFrame()
     m_outputImage = m_outputImage_thresh;
 }
 
+void Application::drawDigit() {
+    std::string d = std::to_string(digit);
+    std::string p = std::to_string((int) (precision * 100));
+    std::string text = d + "," + p + "%";
+    cv::putText(m_bgrImage, text, cv::Point(20,460), cv::FONT_HERSHEY_SIMPLEX, 4, black_color, 3);
+}
+
 void Application::loop()
 {
 	int key = cv::waitKey(20);
@@ -181,6 +192,9 @@ void Application::loop()
 
 	m_depthCamera->getFrame(m_bgrImage, m_depthImage);
     
+    cv::flip(m_bgrImage, m_bgrImage, -1);
+    cv::flip(m_depthImage, m_depthImage, -1);
+    
     if (!captured_reference) {
         m_depthImage.copyTo(m_reference);
         m_reference *= brighten_factor;
@@ -190,6 +204,13 @@ void Application::loop()
     m_digitImage = m_bgrImage;
     
 	processFrame();
+    
+    cv::flip(m_bgrImage, m_bgrImage, 0);
+    cv::flip(m_depthImage, m_depthImage, 0);
+    
+    if (hasDigit) {
+        drawDigit();
+    }
 
 	cv::imshow("bgr", m_bgrImage);
 	cv::imshow("depth", m_depthImage);
