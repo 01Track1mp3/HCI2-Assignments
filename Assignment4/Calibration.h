@@ -23,6 +23,8 @@ public:
 
 	const cv::Mat &physicalToCamera() const;
 	const cv::Mat &cameraToPhysical() const;
+    
+    void getHomographyFromCalibration(cv::Mat calibration, cv::Mat &homography);
 
 protected:
 	void calibrate(const cv::Mat &bgrImage);

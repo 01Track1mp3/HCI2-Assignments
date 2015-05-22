@@ -33,6 +33,9 @@
 const int Application::uist_level = 1;
 const char* Application::uist_server = "127.0.0.1";
 
+using namespace cv;
+using namespace std;
+
 void Application::warpImage()
 {
 	///////////////////////////////////////////////////////////////////////////
@@ -48,6 +51,8 @@ void Application::warpImage()
 	//                  you have computed
 	//
 	///////////////////////////////////////////////////////////////////////////
+    Mat homography = m_calibration->projectorToPhysical() * m_calibration->physicalToCamera();
+    warpPerspective(m_bgrImage, m_outputImage, homography, Size(480, 640), INTER_NEAREST);
 }
 
 void Application::processFrame()

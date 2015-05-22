@@ -2,9 +2,12 @@
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
 
 #include <iostream>
 
+using namespace std;
+using namespace cv;
 
 void Calibration::computeHomography()
 {
@@ -28,6 +31,38 @@ void Calibration::computeHomography()
 	// * m_cameraToPhysical
 	//
 	///////////////////////////////////////////////////////////////////////////
+    vector<Point2f> physicalCoordinates = vector<Point2f>();
+    physicalCoordinates.push_back(Point2f(0,0));
+    physicalCoordinates.push_back(Point2f(40,0));
+    physicalCoordinates.push_back(Point2f(40,30));
+    physicalCoordinates.push_back(Point2f(0,30));
+    
+    // compute physical -> projector
+    m_physicalToProjector = findHomography(physicalCoordinates, m_projectorCoordinates);
+    
+    // compute physical -> camera
+    m_physicalToCamera = findHomography(physicalCoordinates, m_cameraCoordinates);
+    
+    // projector -> physical
+    invert(m_physicalToProjector, m_projectorToPhysical);
+    
+    // camera -> physical
+    invert(m_physicalToCamera, m_cameraToPhysical);
+}
+
+void Calibration::getHomographyFromCalibration(Mat calibration, Mat &homography) {
+////    Mat calibrationMat = Mat(1,8,CV_32FC1);
+////    
+////    
+////    
+////    SVD svd = SVD(calibrationMat, SVD::FULL_UV);
+//    homography = Mat(3, 3, CV_32FC1);
+////
+////    for (int i = 0; i < 9; i++) {
+////        homography.at<float>(i / 3, i % 3) =
+////        svd.vt.at<float>(8, i);
+////    }
+//    findHomography(calibration, homography)
 }
 
 void mouseCallback(int event, int x, int y, int flags, void *pointer);
