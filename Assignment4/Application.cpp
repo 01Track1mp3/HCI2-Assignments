@@ -36,7 +36,21 @@ const char* Application::uist_server = "127.0.0.1";
 using namespace cv;
 using namespace std;
 
-void Application::warpImage()
+bool captured_reference = false;
+int brighten_factor = 15;
+
+Point lastTouch;
+bool hasLastTouch = false;
+
+void Application::warpCameraToUntransformed() {
+    Mat homography = m_calibration->cameraToPhysical();// * m_calibration->physicalToProjector();
+    warpPerspective(m_depthImage, m_depthImageUntransformed, homography, Size(640, 480), INTER_NEAREST);
+
+    m_depthImage = Mat(480, 640, CV_16UC1);
+    m_depthImage = m_depthImageUntransformed;
+}
+
+void Application::warpUntransformedToTransformed()
 {
 	///////////////////////////////////////////////////////////////////////////
 	//
@@ -51,8 +65,74 @@ void Application::warpImage()
 	//                  you have computed
 	//
 	///////////////////////////////////////////////////////////////////////////
-    Mat homography = m_calibration->projectorToPhysical() * m_calibration->physicalToCamera();
-    warpPerspective(m_bgrImage, m_outputImage, homography, Size(480, 640), INTER_NEAREST);
+    Mat homography = m_calibration->projectorToPhysical(); // * m_calibration->physicalToCamera();
+    warpPerspective(m_gameImage, m_outputImage, homography, Size(640, 480), INTER_NEAREST);
+}
+
+bool Application::isFoot(std::vector<cv::Point> contour)
+{
+    return cv::contourArea(contour) > 100;
+}
+
+static cv::Scalar ellipse_color = cv::Scalar(255,0,0);
+void Application::drawEllipse(cv::RotatedRect box)
+{
+    cv::ellipse(m_bgrImage, box, ellipse_color, 3);
+}
+
+void Application::processTouch()
+{
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    // * m_bgrImage: The image of the Kinect's color camera
+    // * m_depthImage: The image of the Kinects's depth sensor
+    // * m_outputImage: The image in which you can draw the touch circles.
+    //
+    ///////////////////////////////////////////////////////////////////////////
+    
+    // brightening up the depth image to make the values visible
+    m_depthImage *= brighten_factor;
+    
+    // substract background
+    cv::absdiff(m_reference, m_depthImage, m_depthImage);
+    
+    // converting to 8-Bit, also scale down values to 8-Bit scale
+    cv::Mat m_depthImage_8CU1 = cv::Mat(480, 640, CV_8UC1);
+    m_depthImage.convertTo(m_depthImage_8CU1, CV_8U, 1.0/256);
+    
+    // thresholding
+    cv::threshold(m_depthImage_8CU1, m_outputImage, 4, 255, cv::THRESH_TOZERO_INV);
+    
+    // blur image
+    cv::blur(m_outputImage, m_outputImage, cv::Size(13, 13));
+    
+    cv::Mat m_outputImage_thresh = cv::Mat(480, 640, CV_8UC1);
+    
+    // make binary image
+    cv::threshold(m_outputImage, m_outputImage_thresh, 2, 255, cv::THRESH_BINARY);
+    
+    cv::Mat m_contour = cv::Mat(480, 640, CV_8UC1);
+    m_outputImage_thresh.copyTo(m_contour);
+    
+    // find contures
+    std::vector<std::vector<cv::Point> > contours;
+    cv::findContours(m_contour, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
+    
+    hasLastTouch = false;
+    // draw ellipses
+    for (unsigned long i = 0; i < contours.size(); i++) {
+        // less than 5 points throw an assertion error
+        if (contours[i].size() >= 5) {
+            cv::RotatedRect box = cv::fitEllipse(contours[i]);
+            if (isFoot(contours[i])) {
+                drawEllipse(box);
+                lastTouch = box.center;
+                hasLastTouch = true;
+            }
+        }
+    }
+    
+    m_touchOutput = m_outputImage_thresh;
 }
 
 void Application::processFrame()
@@ -74,7 +154,35 @@ void Application::processFrame()
 	///////////////////////////////////////////////////////////////////////////
 
 	// Sample code brightening up the depth image to make the values visible
-	m_depthImage *= 10;
+    
+    if (!hasLastTouch) {
+        return;
+    }
+    
+    cout << lastTouch << endl;
+    
+//    vector<Point3_<int>> homoVec;
+//    Point3_<int> homoTouch = Point3_<int>(lastTouch.x, lastTouch.y, 1);
+//    homoVec.push_back(homoTouch);
+    
+    Mat homoMat = Mat(1,3,CV_64F);
+    homoMat.at<double>(0, 0) = (double)lastTouch.x;
+    homoMat.at<double>(0, 1) = (double)lastTouch.y;
+    homoMat.at<double>(0, 2) = (double)1;
+    cout << homoMat << endl;
+    
+    
+    Mat homography = m_calibration->cameraToPhysical() * m_calibration->physicalToProjector();
+    cout << homography << endl;
+
+    Mat homoTouchInUist = (homoMat * m_calibration->cameraToPhysical()) * m_calibration->physicalToProjector();
+    
+    Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
+    
+    Point final = Point((int)touchInUist.x, (int)touchInUist.y);
+
+    circle(m_outputImage, final, 2, Scalar(200,0,0));
+    cout << final << endl;
 }
 
 void Application::processSkeleton(XnUserID userId)
@@ -173,7 +281,30 @@ void Application::loop()
 	if(m_depthCamera)
 	{
 		m_depthCamera->getFrame(m_bgrImage, m_depthImage);
+        
+//        cv::flip(m_bgrImage, m_bgrImage, -1);
+//        cv::flip(m_depthImage, m_depthImage, -1);
+        
+        if (!captured_reference) {
+            m_depthImage.copyTo(m_reference);
+            m_reference *= brighten_factor;
+            captured_reference = true;
+
+//            Mat homography = m_calibration->cameraToPhysical(); //* m_calibration->physicalToProjector();
+//            warpPerspective(m_reference, m_reference, homography, Size(640, 480));
+        }
+        
+        m_depthImageUntransformed = Mat(480, 640, CV_16UC1);
+        
+//        warpCameraToUntransformed();
+        processTouch();
 		processFrame();
+//        cv::flip(m_touchOutput, m_touchOutput, 0);
+//        warpUntransformedToTransformed();
+        
+//        cv::flip(m_bgrImage, m_bgrImage, 0);
+//        cv::flip(m_depthImage, m_depthImage, 0);
+
 	}
 
 	if(m_skeletonTracker)
@@ -186,6 +317,7 @@ void Application::loop()
 	cv::imshow("bgr", m_bgrImage);
 	cv::imshow("depth", m_depthImage);
 	cv::imshow("output", m_outputImage);
+    cv::imshow("touch", m_touchOutput);
 	cv::imshow("UIST game", m_gameImage);
 }
 
@@ -221,8 +353,11 @@ Application::Application()
 	// create work buffer
 	m_bgrImage = cv::Mat(480, 640, CV_8UC3);
 	m_depthImage = cv::Mat(480, 640, CV_16UC1);
-	m_outputImage = cv::Mat(480, 640, CV_8UC1);
+	m_outputImage = cv::Mat(640, 480, CV_8UC1);
 	m_gameImage = cv::Mat(480, 480, CV_8UC3);
+    m_reference = cv::Mat(480, 640, CV_16UC1);
+    m_depthImageUntransformed = cv::Mat(480, 640, CV_16UC1);
+    m_touchOutput = cv::Mat(480, 640, CV_8UC1);
 
 	if(uist_server == "127.0.0.1") {
 		m_gameServer = new GameServer;

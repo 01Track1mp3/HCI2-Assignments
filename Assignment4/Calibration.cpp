@@ -31,23 +31,31 @@ void Calibration::computeHomography()
 	// * m_cameraToPhysical
 	//
 	///////////////////////////////////////////////////////////////////////////
-    vector<Point2f> physicalCoordinates = vector<Point2f>();
+    vector<Point2f> physicalCoordinates = vector<Point2f>(); // these should be window coords...
+    physicalCoordinates.push_back(Point2f(0,480));
+    physicalCoordinates.push_back(Point2f(480,480));
+    physicalCoordinates.push_back(Point2f(480,0));
     physicalCoordinates.push_back(Point2f(0,0));
-    physicalCoordinates.push_back(Point2f(40,0));
-    physicalCoordinates.push_back(Point2f(40,30));
-    physicalCoordinates.push_back(Point2f(0,30));
+    
+    // compute projetor -> physical
+    m_projectorToPhysical = getPerspectiveTransform(physicalCoordinates, m_projectorCoordinates);
     
     // compute physical -> projector
-    m_physicalToProjector = findHomography(physicalCoordinates, m_projectorCoordinates);
+    invert(m_projectorToPhysical, m_physicalToProjector);
     
-    // compute physical -> camera
-    m_physicalToCamera = findHomography(physicalCoordinates, m_cameraCoordinates);
+    // compute projector -> camera
+//    Mat projectorToCamera = getPerspectiveTransform(m_cameraCoordinates, m_projectorCoordinates);
     
-    // projector -> physical
-    invert(m_physicalToProjector, m_projectorToPhysical);
+    // camera -> projector
+//    Mat cameraToProjector;
+//    invert(projectorToCamera, cameraToProjector);
     
-    // camera -> physical
-    invert(m_physicalToCamera, m_cameraToPhysical);
+    // compute camera -> physical
+    m_cameraToPhysical = getPerspectiveTransform(physicalCoordinates, m_cameraCoordinates); //cameraToProjector * m_projectorToPhysical;
+    
+    // physical -> camera
+    invert(m_cameraToPhysical, m_physicalToCamera);
+
 }
 
 void Calibration::getHomographyFromCalibration(Mat calibration, Mat &homography) {
