@@ -37,11 +37,16 @@ void Calibration::computeHomography()
     physicalCoordinates.push_back(Point2f(480,0));
     physicalCoordinates.push_back(Point2f(0,0));
     
+    m_physicalToProjector = cv::getPerspectiveTransform(physicalCoordinates, m_projectorCoordinates);
+    m_projectorToPhysical = cv::getPerspectiveTransform(m_projectorCoordinates, physicalCoordinates);
+    m_physicalToCamera = cv::getPerspectiveTransform(physicalCoordinates, m_cameraCoordinates);
+    m_cameraToPhysical = cv::getPerspectiveTransform(m_cameraCoordinates, physicalCoordinates);
+    
     // compute projetor -> physical
-    m_projectorToPhysical = getPerspectiveTransform(physicalCoordinates, m_projectorCoordinates);
+//    m_projectorToPhysical = getPerspectiveTransform(physicalCoordinates, m_projectorCoordinates);
     
     // compute physical -> projector
-    invert(m_projectorToPhysical, m_physicalToProjector);
+//    invert(m_projectorToPhysical, m_physicalToProjector);
     
     // compute projector -> camera
 //    Mat projectorToCamera = getPerspectiveTransform(m_cameraCoordinates, m_projectorCoordinates);
@@ -51,10 +56,10 @@ void Calibration::computeHomography()
 //    invert(projectorToCamera, cameraToProjector);
     
     // compute camera -> physical
-    m_cameraToPhysical = getPerspectiveTransform(physicalCoordinates, m_cameraCoordinates); //cameraToProjector * m_projectorToPhysical;
+//    m_cameraToPhysical = getPerspectiveTransform(physicalCoordinates, m_cameraCoordinates); //cameraToProjector * m_projectorToPhysical;
     
     // physical -> camera
-    invert(m_cameraToPhysical, m_physicalToCamera);
+//    invert(m_cameraToPhysical, m_physicalToCamera);
 
 }
 

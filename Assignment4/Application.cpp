@@ -65,8 +65,9 @@ void Application::warpUntransformedToTransformed()
 	//                  you have computed
 	//
 	///////////////////////////////////////////////////////////////////////////
-    Mat homography = m_calibration->projectorToPhysical(); // * m_calibration->physicalToCamera();
-    warpPerspective(m_gameImage, m_outputImage, homography, Size(640, 480), INTER_NEAREST);
+//    Mat homography = m_calibration->projectorToPhysical(); // * m_calibration->physicalToCamera();
+//    warpPerspective(m_gameImage, m_outputImage, homography, Size(640, 480), INTER_NEAREST);
+    warpPerspective(m_gameImage, m_outputImage, m_calibration->physicalToProjector(), m_outputImage.size());
 }
 
 bool Application::isFoot(std::vector<cv::Point> contour)
@@ -165,18 +166,13 @@ void Application::processFrame()
 //    Point3_<int> homoTouch = Point3_<int>(lastTouch.x, lastTouch.y, 1);
 //    homoVec.push_back(homoTouch);
     
-    Mat homoMat = Mat(1,3,CV_64F);
+    Mat homoMat = Mat(3, 1, CV_64FC1);
     homoMat.at<double>(0, 0) = (double)lastTouch.x;
-    homoMat.at<double>(0, 1) = (double)lastTouch.y;
-    homoMat.at<double>(0, 2) = (double)1;
+    homoMat.at<double>(1, 0) = (double)lastTouch.y;
+    homoMat.at<double>(2, 0) = 1.0;
     cout << homoMat << endl;
-    
-    
-    Mat homography = m_calibration->cameraToPhysical() * m_calibration->physicalToProjector();
-    cout << homography << endl;
 
-    Mat homoTouchInUist = (homoMat * m_calibration->cameraToPhysical()) * m_calibration->physicalToProjector();
-    
+    Mat homoTouchInUist = homoMat * m_calibration->cameraToPhysical();
     Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
     
     Point final = Point((int)touchInUist.x, (int)touchInUist.y);
@@ -297,6 +293,7 @@ void Application::loop()
         m_depthImageUntransformed = Mat(480, 640, CV_16UC1);
         
 //        warpCameraToUntransformed();
+        warpUntransformedToTransformed();
         processTouch();
 		processFrame();
 //        cv::flip(m_touchOutput, m_touchOutput, 0);
