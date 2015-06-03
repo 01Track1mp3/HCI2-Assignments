@@ -28,7 +28,9 @@ public:
     void processTouch();
     bool isFoot(std::vector<cv::Point> contour);
     void drawEllipse(cv::RotatedRect box);
-
+    bool selectUnit();
+    bool moveUnit();
+    
 	void makeScreenshots();
 	void clearOutputImage();
 
@@ -53,6 +55,9 @@ protected:
     cv::Mat m_touchOutput;
 
 	bool m_isFinished;
+    
+    bool isUnitSelected;
+    int unitIndex;
 
 	static const int uist_level;
 	static const char *uist_server;

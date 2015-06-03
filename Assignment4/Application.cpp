@@ -156,9 +156,8 @@ void Application::processFrame()
 
 	// Sample code brightening up the depth image to make the values visible
     
-    if (!hasLastTouch) {
-        return;
-    }
+    if (hasLastTouch) {
+    
     
     cout << lastTouch << endl;
     
@@ -166,19 +165,38 @@ void Application::processFrame()
 //    Point3_<int> homoTouch = Point3_<int>(lastTouch.x, lastTouch.y, 1);
 //    homoVec.push_back(homoTouch);
     
-    Mat homoMat = Mat(3, 1, CV_64FC1);
-    homoMat.at<double>(0, 0) = (double)lastTouch.x;
-    homoMat.at<double>(1, 0) = (double)lastTouch.y;
-    homoMat.at<double>(2, 0) = 1.0;
-    cout << homoMat << endl;
+        Mat homoMat = Mat(3, 1, CV_64FC1);
+        homoMat.at<double>(0, 0) = (double)lastTouch.x;
+        homoMat.at<double>(1, 0) = (double)lastTouch.y;
+        homoMat.at<double>(2, 0) = 1.0;
+        cout << homoMat << endl;
 
-    Mat homoTouchInUist = homoMat * m_calibration->cameraToPhysical();
-    Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
+        Mat homoTouchInUist = m_calibration->cameraToPhysical() * homoMat;
+        Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
     
-    Point final = Point((int)touchInUist.x, (int)touchInUist.y);
+        Point final = Point((int)touchInUist.x, (int)touchInUist.y);
 
-    circle(m_outputImage, final, 2, Scalar(200,0,0));
-    cout << final << endl;
+        circle(m_gameImage, final, 10, Scalar(200,0,0), 4);
+        
+        selectUnit() || (isUnitSelected && moveUnit());
+        
+    }
+    warpUntransformedToTransformed();
+}
+
+bool Application::selectUnit()
+{
+    int nearestUnit = -1;
+    for (int i = 0; i < 5; i++) {
+        Point unitPosition = m_gameClient->game()->unitByIndex(i)->position();
+        cv::distance
+    }
+    return nearestUnit != -1;
+}
+
+bool Application::moveUnit()
+{
+    return true;
 }
 
 void Application::processSkeleton(XnUserID userId)
