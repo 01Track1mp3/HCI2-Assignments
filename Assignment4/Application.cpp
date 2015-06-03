@@ -169,7 +169,6 @@ void Application::processFrame()
         homoMat.at<double>(0, 0) = (double)lastTouch.x;
         homoMat.at<double>(1, 0) = (double)lastTouch.y;
         homoMat.at<double>(2, 0) = 1.0;
-        cout << homoMat << endl;
 
         Mat homoTouchInUist = m_calibration->cameraToPhysical() * homoMat;
         Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
@@ -216,8 +215,11 @@ bool Application::selectUnit()
     }
     
     if (nearestUnit != -1) {
+        if (isUnitSelected) {
+            m_gameClient->game()->highlightUnit(unitIndex, false);
+        }
         unitIndex = nearestUnit;
-        m_gameClient->game()->highlightUnit(nearestUnit, false);
+        m_gameClient->game()->highlightUnit(nearestUnit, true);
         isUnitSelected = true;
         return true;
     } else {
