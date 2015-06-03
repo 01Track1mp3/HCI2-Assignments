@@ -186,9 +186,10 @@ void Application::processFrame()
 
 Point Application::getVector(Point from, Point to)
 {
-    int tempX = to.x - from.x;
-    int tempY = to.y - from.y;
-    return Point(tempX, tempY);
+//    int tempX = to.x - from.x;
+//    int tempY = to.y - from.y;
+//    return Point(tempX, tempY);
+    return to - from;
 }
 
 float Application::getLength(Point vector) {
