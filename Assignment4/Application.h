@@ -31,6 +31,8 @@ public:
     bool selectUnit();
     bool moveUnit();
     
+    float getAngle(cv::Point vector);
+    
 	void makeScreenshots();
 	void clearOutputImage();
 
