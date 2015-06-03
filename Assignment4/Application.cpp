@@ -175,7 +175,7 @@ void Application::processFrame()
         Point2f touchInUist = Point(homoTouchInUist.at<double>(0), homoTouchInUist.at<double>(1));
     
         Point final = Point((int)touchInUist.x, (int)touchInUist.y);
-
+        lastTouch = final;
         circle(m_gameImage, final, 10, Scalar(200,0,0), 4);
         
         selectUnit() || (isUnitSelected && moveUnit());
@@ -184,14 +184,45 @@ void Application::processFrame()
     warpUntransformedToTransformed();
 }
 
+Point Application::getVector(Point from, Point to)
+{
+    int tempX = to.x - from.x;
+    int tempY = to.y - from.y;
+    return Point(tempX, tempY);
+}
+
+float Application::getLength(Point vector) {
+    
+    float distance = std::sqrt((vector.x * vector.x) + (vector.y * vector.y));
+    return distance;
+}
+
 bool Application::selectUnit()
 {
     int nearestUnit = -1;
+    float lastDistance = 1000;
     for (int i = 0; i < 5; i++) {
-        Point unitPosition = m_gameClient->game()->unitByIndex(i)->position();
-        cv::distance
+        GameUnitPtr unit = m_gameClient->game()->unitByIndex(i);
+        if (!unit->isLiving()) {
+            continue;
+        }
+        Point unitPos= unit->position();
+        
+        float distance = getLength(getVector(lastTouch, unitPos));
+        if (distance < 50.0 && distance < lastDistance) {
+            nearestUnit = i;
+            lastDistance = distance;
+        }
     }
-    return nearestUnit != -1;
+    
+    if (nearestUnit != -1) {
+        unitIndex = nearestUnit;
+        m_gameClient->game()->highlightUnit(nearestUnit, false);
+        isUnitSelected = true;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 bool Application::moveUnit()

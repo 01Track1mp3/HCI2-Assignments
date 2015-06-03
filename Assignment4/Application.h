@@ -31,6 +31,9 @@ public:
     bool selectUnit();
     bool moveUnit();
     
+    cv::Point getVector(cv::Point from, cv::Point to);
+    float getLength(cv::Point vector);
+    
 	void makeScreenshots();
 	void clearOutputImage();
 
