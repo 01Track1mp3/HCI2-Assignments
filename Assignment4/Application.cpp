@@ -185,9 +185,10 @@ void Application::processFrame()
 
 Point Application::getVector(Point from, Point to)
 {
-    int tempX = to.x - from.x;
-    int tempY = to.y - from.y;
-    return Point(tempX, tempY);
+//    int tempX = to.x - from.x;
+//    int tempY = to.y - from.y;
+//    return Point(tempX, tempY);
+    return to - from;
 }
 
 float Application::getLength(Point vector) {
@@ -227,8 +228,33 @@ bool Application::selectUnit()
     }
 }
 
+float Application::getAngle(Point vector)
+{
+    return atan(vector.y / vector.x);
+}
+
 bool Application::moveUnit()
 {
+    assert(unitIndex >= 0 && unitIndex < 5);
+    
+    float minMovementInstructionDistance = 10.0f; // in physical pixel space
+    float maxMovementInstructionDistance = 200.0f; // in physical pixel space
+    float maxStrength = 1.0f;
+    
+    Point unitPosition = m_gameClient()->game()->unitByIndex(unitIndex)->position();
+    Point direction = getVector(unitPosition, lastTouch);
+    float length = getLength(direction);
+    
+    // give an instruction with minimum distance to the unit
+    if (length < minMovementInstructionDistance) {
+        return;
+    }
+    
+    float angle = getAngle(direction);
+    float strength = MIN(maxMovementInstructionDistance, length) / maxMovementInstructionDistance * maxStrength;
+    
+    m_gameClient->game()->moveUnit(unitIndex, angle, strength);
+    
     return true;
 }
 

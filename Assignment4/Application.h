@@ -31,6 +31,7 @@ public:
     bool selectUnit();
     bool moveUnit();
     
+    float getAngle(cv::Point vector);
     cv::Point getVector(cv::Point from, cv::Point to);
     float getLength(cv::Point vector);
     
